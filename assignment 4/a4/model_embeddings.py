@@ -51,8 +51,8 @@ class ModelEmbeddings(nn.Module):
         ###     Embedding Layer:
         ###         https://pytorch.org/docs/stable/nn.html#torch.nn.Embedding
 
-        self.source = nn.Embedding(len(vocab.src), max(map(len, vocab.src)))
-        self.target = nn.Embedding(len(vocab.tgt), max(map(len, vocab.tgt)))
+        self.source = nn.Embedding(len(vocab.src), self.embed_size)
+        self.target = nn.Embedding(self.embed_size, len(vocab.tgt))
 
         ### END YOUR CODE
 
